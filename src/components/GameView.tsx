@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { colorOptions, type ColorOption } from '../utils/Colors';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 type Score = {
   name: string;
