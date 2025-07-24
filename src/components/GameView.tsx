@@ -18,7 +18,7 @@ const GameView: React.FC = () => {
   const [responseTime, setResponseTimes] = useState<number[]>([]);
   const [correctCount, setCorrectCount] = useState(0);
   const [totalCount, setTotalCount] = useState(1);
-  const [gameTimeLeft, setGameTimeLeft] = useState<number>(5);
+  const [gameTimeLeft, setGameTimeLeft] = useState<number>(30);
   const [wordTimeoutId, setWordTimeoutId] = useState<ReturnType<typeof setTimeout> | null>(null);
   const [gameEnded, setGameEnded] = useState(false);
   const [playerName, setPlayerName] = useState('');
@@ -158,13 +158,13 @@ const GameView: React.FC = () => {
             <div className="flex gap-4">
               <button
                 onClick={() => handleAnswer(currentWord)}
-                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-white py-3 rounded-xl font-semibold shadow transition-transform hover:scale-105"
+                className="flex-1 bg-emerald-500 hover:bg-emerald-600 text-green py-3 rounded-xl font-semibold shadow transition-transform hover:scale-105"
               >
                 ✓ Correcto
               </button>
               <button
                 onClick={() => handleAnswer(null)}
-                className="flex-1 bg-red-500 hover:bg-red-600 text-white py-3 rounded-xl font-semibold shadow transition-transform hover:scale-105"
+                className="flex-1 bg-red-500 hover:bg-red-600 text-red py-3 rounded-xl font-semibold shadow transition-transform hover:scale-105"
               >
                 ✗ Incorrecto
               </button>
@@ -226,12 +226,12 @@ const GameView: React.FC = () => {
               <button
                 onClick={saveScoreToLocalStorage}
                 disabled={scoreSaved}
-                className="w-full bg-teal-500 hover:bg-teal-600 text-white py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
+                className="w-full bg-gray-500 hover:bg-teal-600 py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
                 💾 {scoreSaved ? `guardado` : `Guardar`}
               </button>
               <button
                 onClick={() => Navigate(`/`)}
-                className="w-full bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
+                className="w-full bg-gray-500 hover:bg-gray-600 text-gary py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
                 🔄 Volver al inicio
               </button>
             </div>

@@ -28,21 +28,21 @@ const HomeView: React.FC = () => {
       <div className="flex flex-col w-full max-w-sm gap-4">
         <button
           onClick={() => navigate(`/GameView`)}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
+          className="w-full bg-gray-50 hover:bg-blue-700 text-blue px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
         >
           Iniciar juego
         </button>
 
         <button
           onClick={() => navigate(`/CustomGame`)}
-          className="w-full bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
+          className="w-full bg-green-600 hover:bg-green-700 text-blue px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
         >
           Configuración personalizada
         </button>
 
         <button
           onClick={() => navigate(`/ScoresView`)}
-          className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
+          className="w-full bg-purple-600 hover:bg-purple-700 text-blue px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
         >
           Ver puntajes
         </button>

@@ -73,7 +73,7 @@ const ScoreView: React.FC = () => {
                 <div>
                     <button
                         onClick={() => Navigate(`/`)}
-                        className="w-full bg-gray-500 hover:bg-gray-600 text-white py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
+                        className="w-full bg-gray-500 hover:bg-gray-600 text-gray py-3 rounded-xl font-bold shadow transition-transform hover:scale-105">
                         🔄 Volver al inicio
                     </button>
                 </div>
