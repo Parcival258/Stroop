@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { colorOptions, type ColorOption } from '../utils/Colors';
 import { useNavigate } from 'react-router-dom';
 
@@ -24,6 +24,8 @@ const GameView: React.FC = () => {
   const [playerName, setPlayerName] = useState('');
   const [scoreSaved, setScoreSaved] = useState(false);
   const Navigate = useNavigate();
+  
+  const timeAnswerRef = useRef<number>(3000);
 
   const saveScoreToLocalStorage = () => {
     if (!playerName.trim()) {
@@ -61,7 +63,7 @@ const GameView: React.FC = () => {
 
     const timeout = setTimeout(() => {
       if (!gameEnded) handleAnswer(null, true);
-    }, 3000);
+    }, timeAnswerRef.current);
 
     setWordTimeoutId(timeout);
   };
@@ -71,7 +73,6 @@ const GameView: React.FC = () => {
       clearTimeout(wordTimeoutId);
       setWordTimeoutId(null);
     }
-
     const isCorrect = currentWord?.name === colorToShow?.name;
     const wasUserCorrect = isTimeout ? false : answer === null ? !isCorrect : isCorrect;
 
@@ -90,15 +91,13 @@ const GameView: React.FC = () => {
   const endGame = () => {
     if (wordTimeoutId) clearTimeout(wordTimeoutId);
     setGameEnded(true);
-
-
+    timeAnswerRef.current = 99999999999;
 
   };
 
-  // Temporizador
+  // Temporizador de 1 segundo
   useEffect(() => {
     if (gameEnded) return;
-
     const interval = setInterval(() => {
       setGameTimeLeft(prev => {
         if (prev <= 1) {
