@@ -34,10 +34,10 @@ const HomeView: React.FC = () => {
         </button>
 
         <button
-          onClick={() => navigate(`/CustomGame`)}
+          onClick={() => navigate(`/CustomConfig`)}
           className="w-full bg-green-600 hover:bg-green-700 text-blue px-6 py-3 rounded-xl font-semibold shadow-md transition duration-200"
         >
-          Configuración personalizada
+          Configuración personalizada `muy pronto`
         </button>
 
         <button

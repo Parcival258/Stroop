@@ -15,7 +15,7 @@ const ScoreView: React.FC = () => {
     const Navigate = useNavigate();
 
     useEffect(() => {
-        const stored = localStorage.getItem('stroop_score');
+        const stored = localStorage.getItem('stroop_scores');
         console.log('Stored scores:', stored);
         if (stored) {
             try {

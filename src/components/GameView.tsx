@@ -24,6 +24,8 @@ const GameView: React.FC = () => {
   const [playerName, setPlayerName] = useState('');
   const [scoreSaved, setScoreSaved] = useState(false);
   const Navigate = useNavigate();
+ // const [isCustomGame, setIsCustomGame] = useState(false);
+  
   
   const timeAnswerRef = useRef<number>(3000);
 
@@ -48,7 +50,7 @@ const GameView: React.FC = () => {
       .sort((a, b) => b.percentage - a.percentage || a.avgTime - b.avgTime)
       .slice(0, 5);
 
-    localStorage.setItem(`stroop_score`, JSON.stringify(update));
+    localStorage.setItem(`stroop_scores`, JSON.stringify(update));
     setScoreSaved(true)
   }
   const nextWord = () => {
@@ -142,9 +144,9 @@ const GameView: React.FC = () => {
               </div>
             </div>
 
-            {/* Palabra */}
+            {/* palabra*/}
             <div className="text-center">
-              <div className="bg-gray-50 rounded-2xl p-8 border-2 border-dashed border-gray-200">
+              <div className="bg-gray-300 rounded-2xl p-8 border-2 border-dashed border-gray-200">
                 <span
                   className="text-6xl font-bold tracking-wide"
                   style={{ color: colorToShow?.cssValue }}
